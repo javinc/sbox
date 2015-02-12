@@ -17,13 +17,10 @@ const (
 var (
     host string
     action string
-    addr string
 )
 
 func main() {
     // validate command
-
-    // check args count
     if len(os.Args) == 1 || len(os.Args) == 2 && os.Args[1] == "help" {
         fmt.Println(`
     Usage:
@@ -65,7 +62,7 @@ func main() {
     }
 
     // assign address
-    addr64, err := strconv.ParseUint("0x" + os.Args[3], 0, 16)
+    address64, err := strconv.ParseUint("0x" + os.Args[3], 0, 16)
     if err != nil {
         fmt.Println("ERROR: invalid address")
 
@@ -73,7 +70,7 @@ func main() {
     }
     
     // castback to 16
-    address := uint16(addr64)
+    address := uint16(address64)
 
     // check action argument
     switch action {
