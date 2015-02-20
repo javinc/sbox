@@ -98,7 +98,7 @@ func main() {
         return
     case "write-coil-on":
         result, err := client.WriteSingleCoil(address, on)
-         if err != nil || result == nil {
+        if err != nil || result == nil {
             fmt.Println("ERROR:", err, result)
 
             return
@@ -109,7 +109,7 @@ func main() {
         return
     case "write-coil-off":
         result, err := client.WriteSingleCoil(address, off)
-         if err != nil || result == nil {
+        if err != nil || result == nil {
             fmt.Println("ERROR:", err, result)
 
             return

@@ -1,0 +1,13 @@
+{
+    "port": 4001,
+    "path": "allocation.csv",
+    "address": {
+        "label": "",
+        "street": "",
+        "city": "",
+        "state": ""
+    },
+    "deployer": {
+        "username": "koko"
+    }
+}
