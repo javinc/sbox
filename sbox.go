@@ -315,8 +315,6 @@ func register() {
     // normalize data
     raw := strings.ToLower(string(data))
     
-    fmt.Println(raw)
-
     // send post json
     req, err := http.NewRequest("POST", api, bytes.NewBuffer([]byte(raw)))
     req.Header.Set("Content-Type", "application/json")
