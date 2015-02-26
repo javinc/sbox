@@ -16,6 +16,11 @@ import (
     "strings"
 )
 
+type Extra struct {
+    Name string
+    Input int
+}
+
 type Response struct {
     Type string
     Msg string
@@ -33,17 +38,25 @@ type Door struct {
 type Config struct {
     Port int
     Path string
+    Smartbox struct {
+        Ip string
+        Port int
+    }
     Address struct {
         Label string
         Street string
         City string
         State string
+        Country string
+        Postal string
+        Area string
     }
     Deployer struct {
         Username string
         Password string
     }
     Doors []Door
+    Extras []Extra
 }
 
 const (
@@ -66,6 +79,7 @@ var (
 
     config Config
     response Response
+    extra Extra
     unitUser string
     confirm string
 )
@@ -301,6 +315,8 @@ func register() {
     // normalize data
     raw := strings.ToLower(string(data))
     
+    fmt.Println(raw)
+
     // send post json
     req, err := http.NewRequest("POST", api, bytes.NewBuffer([]byte(raw)))
     req.Header.Set("Content-Type", "application/json")

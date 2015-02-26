@@ -1,13 +1,27 @@
 {
     "port": 4001,
-    "path": "allocation.csv",
+    "path": "door.csv",
+    "deployer": {
+        "username": "charles@superpogi.com"
+    },
     "address": {
         "label": "",
-        "street": "",
-        "city": "",
-        "state": ""
+        "street": "test",
+        "city": "test",
+        "state": "test",
+        "postal": "test",
+        "region": "test",
+        "country": "test",
+        "area": "test"
     },
-    "deployer": {
-        "username": "koko"
-    }
+    "smartbox": {
+        "ip": "192.168.1.49",
+        "port": 8888
+    }, 
+    "extras": [
+        {
+            "name": "alarm", 
+            "input": 516 
+        }
+    ]
 }
