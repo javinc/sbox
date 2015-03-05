@@ -1,11 +1,14 @@
 {
     "port": 4001,
     "path": "door.csv",
+    "api": {
+        "ip": "192.168.1.139",
+        "port": 8082
+    },
     "deployer": {
-        "username": "charles@superpogi.com"
+        "username": "lumpia@openovate.com"
     },
     "address": {
-        "label": "",
         "street": "test",
         "city": "test",
         "state": "test",
@@ -15,6 +18,7 @@
         "area": "test"
     },
     "smartbox": {
+        "name": "Fucking SmartBox",
         "ip": "192.168.1.49",
         "port": 8888
     }, 
@@ -22,6 +26,9 @@
         {
             "name": "alarm", 
             "input": 516 
+        },{
+            "name": "closing", 
+            "input": 400
         }
     ]
 }
