@@ -18,7 +18,7 @@ import (
 
 type Extra struct {
     Name string
-    Input int
+    Input string
 }
 
 type Response struct {
@@ -314,7 +314,7 @@ func register() {
 
     // normalize data
     raw := strings.ToLower(string(data))
-    
+
     // send post json
     req, err := http.NewRequest("POST", api, bytes.NewBuffer([]byte(raw)))
     req.Header.Set("Content-Type", "application/json")

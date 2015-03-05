@@ -25,7 +25,7 @@
     "extras": [
         {
             "name": "alarm", 
-            "input": 516 
+            "input": "516" 
         }
     ]
 }
