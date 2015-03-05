@@ -28,7 +28,6 @@ type Response struct {
 
 type Door struct {
     Name string
-    Input string
     Output string
     Width string
     Height string
@@ -39,7 +38,6 @@ type Config struct {
     Port int
     Path string
     Smartbox struct {
-        Name string
         Ip string
         Port int
     }
@@ -300,7 +298,6 @@ func parseCsv(path string) {
             door[2],
             door[3],
             door[4],
-            door[5],
         })
     }
 }
@@ -314,7 +311,7 @@ func register() {
 
     // normalize data
     raw := strings.ToLower(string(data))
-    
+fmt.Println(raw)
     // send post json
     req, err := http.NewRequest("POST", api, bytes.NewBuffer([]byte(raw)))
     req.Header.Set("Content-Type", "application/json")
