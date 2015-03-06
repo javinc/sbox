@@ -38,6 +38,10 @@ type Door struct {
 type Config struct {
     Port int
     Path string
+    Api struct {
+        Ip string
+        Port int
+    }
     Smartbox struct {
         Name string
         Ip string

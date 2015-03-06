@@ -1,4 +1,4 @@
-door,input,output,width,height,length
+name,input,output,width,height,length
 1,400,500,1,1,1
 2,400,501,10,10,10
 3,400,502,5,5,5
