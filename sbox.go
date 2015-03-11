@@ -86,6 +86,7 @@ var (
     extra Extra
     unitUser string
     confirm string
+    installOption string
 )
 
 func main() {
@@ -94,6 +95,11 @@ func main() {
         if len(os.Args) == 2 {
             switch os.Args[1] {
             case "install":
+                install()
+
+                return
+            case "install-interface":
+                installOption = "interface"
                 install()
 
                 return
@@ -241,6 +247,12 @@ do you want to continue? [Y/n]:`)
         _, err = exec.Command("sudo", "chown", unitUser + ":" + unitUser, deviceInterface).Output()
         if err != nil {
             fmt.Println(err)
+            exit()
+        }
+
+        // check install option 
+        if installOption == "interface" {
+            fmt.Println("creating interface done")
             exit()
         }
 
