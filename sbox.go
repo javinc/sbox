@@ -270,6 +270,13 @@ do you want to continue? [Y/n]:`)
         fmt.Println("parsing config csv file ...")
         parseCsv(config.Path)
 
+        // check smartbox doors if there's open
+        fmt.Println("checking smartbox doors ...")
+        if !checkDoors() {
+            fmt.Println("some doors not calibrated properly")
+            exit()  
+        }
+
         // get deployer password
         password, err := gopass.GetPass("password for deployer " + config.Deployer.Username + ":")
         if err != nil {
@@ -283,6 +290,16 @@ do you want to continue? [Y/n]:`)
 
         fmt.Println("setup complete!")
     }
+
+func checkDoors() bool {
+    // check first door input
+    out, err := exec.Command(sboxFile, deviceInterface, "read-input", config.Doors[0].Input).Output()
+    if len(out) == 0 || strings.IndexAny(string(out), "1") > -1 || err != nil {
+        return false
+    }
+
+    return true
+}
 
 func parseCsv(path string) {
     file, err := os.Open(path)
