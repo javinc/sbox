@@ -6,6 +6,7 @@ smartbox cli using modbus
 - `mv sbox /usr/bin`
 - `sbox`
 
+
     Setup:
         sbox install            Setup
         sbox install-interface  Inteface only
