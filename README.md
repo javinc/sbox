@@ -1,11 +1,6 @@
 # sbox
 smartbox cli using modbus
-
-## setup
-- `go build sbox.go`
-- `mv sbox /usr/bin`
-- `sbox`
-
+just run `sbox` after setup
 
     Setup:
         sbox install            Setup
