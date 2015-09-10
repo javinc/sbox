@@ -28,6 +28,7 @@ type Response struct {
 
 type Door struct {
     Name string
+    Input string
     Output string
     Width string
     Height string
@@ -332,6 +333,7 @@ func parseCsv(path string) {
             door[2],
             door[3],
             door[4],
+            door[5],
         })
     }
 }
@@ -445,17 +447,18 @@ func exit() {
 func help() {
     fmt.Println(`
     Setup:
-        sbox install        Setup
+        sbox install            Setup
+        sbox install-interface  Inteface only
     Usage:
         sbox [host] [action] [address]
     Action:
-        read-coil           READ_COILS
-        write-coil          WRITE_SINGLE_COILS
-        read-input          READ_DESCRETE_INPUTS
+        read-coil               READ_COILS
+        write-coil              WRITE_SINGLE_COILS
+        read-input              READ_DESCRETE_INPUTS
     Sample:
         sbox /dev/ttyUSB0 read-coil 500
         sbox /dev/ttyUSB0 read-input 410
         sbox /dev/ttyUSB0 write-coil-on 500
         sbox /dev/ttyUSB0 write-coil-off 500
-        `)   
+    `)   
 }
