@@ -1,13 +1,34 @@
 {
     "port": 4001,
-    "path": "allocation.csv",
-    "address": {
-        "label": "",
-        "street": "",
-        "city": "",
-        "state": ""
+    "path": "door.csv",
+    "api": {
+        "ip": "192.168.1.139",
+        "port": 8082
     },
     "deployer": {
-        "username": "koko"
-    }
+        "username": "lumpia@openovate.com"
+    },
+    "address": {
+        "street": "test",
+        "city": "test",
+        "state": "test",
+        "postal": "test",
+        "region": "test",
+        "country": "test",
+        "area": "test"
+    },
+    "smartbox": {
+        "name": "Fucking SmartBox",
+        "ip": "192.168.1.49",
+        "port": 8888
+    }, 
+    "extras": [
+        {
+            "name": "alarm", 
+            "input": 516 
+        },{
+            "name": "closing", 
+            "input": 400
+        }
+    ]
 }

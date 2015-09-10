@@ -1,4 +1,4 @@
-package main
+package sbox
 
 import (
     "fmt"
@@ -41,7 +41,7 @@ var (
     confirm string
 )
 
-func main() {
+func install() {
     // confirm installation
     fmt.Println(`
 --------------------------------------------------------------
