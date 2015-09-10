@@ -25,10 +25,7 @@
     "extras": [
         {
             "name": "alarm", 
-            "input": 516 
-        },{
-            "name": "closing", 
-            "input": 400
+            "input": "516" 
         }
     ]
 }
